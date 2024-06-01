@@ -1,0 +1,72 @@
+/* style.css */
+
+@font-face {
+  font-family: 'Zilap Sleep';
+  src: url('fonts/zilap-sleep.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f1e3;
+  color: #5d3a00;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-image: url('media/hero.png');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  /* Adjust this value to match the actual height of your image */
+  color: #f7f1e3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  flex-direction: column;
+}
+
+.header-content h1 {
+  font-family: 'Zilap Sleep', serif;
+  font-size: 3em;
+  /* Increase the font size */
+  width: 33.33%;
+  /* Set the width to 1/3rd of the container */
+}
+
+section {
+  padding: 50px 20px;
+}
+
+.sepia-tone {
+  filter: sepia(1);
+}
+
+h2 {
+  font-family: 'Georgia', serif;
+  margin: 10px 0;
+}
+
+nav {
+  background-color: #8c2c1a;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: #f7f1e3;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #a83f24;
+  color: #f7f1e3;
+  padding: 20px;
+}
