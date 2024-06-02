@@ -1,17 +1,30 @@
 @font-face {
-  font-family: 'Zilap Sleep';
-  src: url('fonts/zilap-sleep.ttf') format('truetype');
+  font-family: 'Mont';
+  src: url('fonts/mont-heavy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garet';
+  src: url('fonts/Garet-Book.woff2') format('woff2'),
+    url('fonts/Garet-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Garet', sans-serif;
   background-color: #f7f1e3;
   color: #5d3a00;
   margin: 0;
-  padding: 0;
-  text-align: center;
+  padding: 0 0 0 30;
+  justify-content: flex-end;
+  /* Align the container to the right */
+  text-align: right;
+  /* Align all text to the right */
+  justify-content: flex-end;
+  /* Align the container to the right */
 }
 
 .social-tags {
@@ -30,30 +43,43 @@ header {
   background-image: url('media/hero.png');
   background-size: cover;
   background-position: center;
+  width: 100%;
+  /* Make header full width */
   height: 500px;
-  color: #f7f1e3;
+  color: #dddddd;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   text-align: center;
+  /* Keep header content centered */
   padding: 0 10px;
   flex-direction: column;
+  box-sizing: border-box;
+  /* Ensure padding is included in the width */
 }
 
 .header-content {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .header-content h1 {
-  font-family: 'Zilap Sleep', serif;
+  font-family: 'Mont', serif;
   font-size: 2em;
-  /* Increase the font size 
-  width: 50%;
-   Set the width to 1/3rd of the container */
 }
 
 section {
-  padding: 50px 20px;
+  padding: 20px 20px;
+  text-align: right;
+  /* Align section content to the right */
+  padding-right: 30px;
+  /* Add padding to keep content away from the edge */
+}
+
+p {
+  max-width: 500px;
+  margin: 0 0 0 auto;
+  padding: 15px;
+  /* Align about section content to the right */
 }
 
 .sepia-tone {
@@ -61,15 +87,15 @@ section {
 }
 
 h2 {
-  font-family: 'Georgia', serif;
+  font-family: 'Mont', serif;
   margin: 10px 0;
 }
 
 nav {
   background-color: #8c2c1a;
-  padding: 10px;
+  padding: 5px;
   position: fixed;
-  top: 50%;
+  top: 66.7%;
   left: 0;
   transform: translateY(-50%);
   display: flex;
@@ -78,9 +104,9 @@ nav {
 
 nav a {
   color: #f7f1e3;
-  margin: 10px 0;
+  margin: 5px 0;
   text-decoration: none;
-  padding: 10px;
+  padding: 5px;
   display: block;
   transition: background-color 0.3s ease;
   /* Smooth transition */
@@ -99,11 +125,6 @@ ul {
   list-style-type: none;
 }
 
-#about p {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
 .contact-button {
   display: inline-block;
   padding: 10px 20px;
@@ -118,8 +139,79 @@ ul {
   background-color: #d1543e;
 }
 
+#shows {
+  width: 500px;
+  background-color: #fff;
+  /* Optional: Add a background color for better visibility */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Add a shadow for better visibility */
+  text-align: right;
+  /* Align text inside the container to the left */
+  margin-right: 30px;
+  /* Ensure the container has some padding from the edge */
+}
+
+#shows h2 {
+  text-align: right;
+}
+
+#shows ul {
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.show-date {
+  width: 100px;
+  /* Adjust the width as needed */
+  font-weight: bold;
+}
+
+.show-details {
+  flex-grow: 1;
+}
+
+.show-details a {
+  text-decoration: none;
+  color: #8c2c1a;
+}
+
+.show-details a:hover {
+  text-decoration: underline;
+}
+
 footer {
   background-color: #a83f24;
   color: #f7f1e3;
   padding: 20px;
+  padding-right: 30px;
+  /* Add padding to keep footer content away from the edge */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  header {
+    height: 300px;
+    /* Adjust height for smaller screens */
+  }
+
+  .header-content h1 {
+    font-size: 1.5em;
+    /* Adjust font size for smaller screens */
+  }
+
+  section {
+    padding: 10px 20px;
+  }
+
+  #about p {
+    max-width: 90%;
+    margin-right: 10px;
+    /* Adjust margin for smaller screens */
+  }
 }

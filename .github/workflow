@@ -22,6 +22,6 @@ jobs:
 
     - name: Sync S3 bucket
       run: |
-        aws s3 sync docs/ s3://big-canyon --delete
+        aws s3 sync docs/ s3://big-canyon
       env:
         AWS_REGION: us-east-1  # Adjust if your bucket is in a different region
