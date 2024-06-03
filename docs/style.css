@@ -15,9 +15,9 @@
 
 body {
   font-family: 'Garet', sans-serif;
-  background-color: #111111;
+  background-color: #111;
   /* background-color: #f7f1e3; */
-  color: #dddddd;
+  color: #ccc;
   margin: 0;
   padding: 0 0 0 30;
   justify-content: flex-end;
@@ -80,25 +80,23 @@ header>* {
 
 .header-content h1 {
   position: absolute;
-  width: 400px;
-  font-family: 'Mont', serif;
   padding-left: 20px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  width: 340px;
+  font-family: 'Mont', serif;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   font-size: 2em;
 }
 
 section {
-  padding: 20px 20px;
+  padding: 20px 30px;
   text-align: right;
   /* Align section content to the right */
-  padding-right: 30px;
   /* Add padding to keep content away from the edge */
 }
 
 p {
   max-width: 400px;
   margin: 0 0 0 auto;
-  padding: 15px;
   /* Align about section content to the right */
 }
 
@@ -113,10 +111,11 @@ h2 {
 }
 
 nav {
-  background-color: #bbb;
-  padding: 5px;
+  background-color: rgba(187, 187, 187, 0.7);
+  ;
+  padding: 10px;
   position: fixed;
-  top: 33.3%;
+  top: 50%;
   left: 0;
   transform: translateY(-50%);
   display: flex;
@@ -125,27 +124,20 @@ nav {
 
 a {
   color: #fff;
-  margin: 5px 0;
   text-decoration: none;
-  padding: 5px;
   display: block;
-  transition: background-color 0.3s ease;
   /* Smooth transition */
 }
 
 a:hover {
-  color: #666;
+  color: #444;
   /* Highlight color on hover */
-  transform: scale(1.1);
+  transform: scale(1.05);
   /* Slightly scale up the link */
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   /* Add shadow effect */
   transition: transform 0.5s ease, shadow 0.5s ease;
   /* Smooth transition */
-}
-
-nav a.active {
-  text-decoration: underline;
 }
 
 ul {
@@ -155,44 +147,34 @@ ul {
 .contact-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #bbb;
+  background-color: #aaa;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  color: #fff;
+  color: #eee;
   margin: 5px 0;
   /* Smooth transition */
 }
 
-#shows {
-  width: 600px;
+.show-section {
+  max-width: 500px;
   background-color: #444;
+  margin-left: auto;
+  /* Push the container to the right */
   /* Optional: Add a background color for better visibility */
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
   /* Optional: Add a shadow for better visibility */
-  text-align: right;
   /* Align text inside the container to the left */
-  margin-right: 30px;
   /* Ensure the container has some padding from the edge */
 }
 
-#shows h2 {
+.show-section h2 {
   text-align: right;
-}
-
-#shows ul {
-  padding: 0;
 }
 
 li {
   display: flex;
   justify-content: flex-end;
-}
-
-.show-date {
-  width: 100px;
-  /* Adjust the width as needed */
 }
 
 .show-details {
@@ -204,15 +186,11 @@ li {
   color: #aaa;
 }
 
-.show-details a:hover {
-  text-decoration: underline;
-}
-
 footer {
   background-color: #444;
+  text-align: center;
   color: #eee;
   padding: 10px;
-  padding-right: 20px;
   /* Add padding to keep footer content away from the edge */
 }
 
@@ -224,17 +202,7 @@ footer {
   }
 
   .header-content h1 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     /* Adjust font size for smaller screens */
-  }
-
-  section {
-    padding: 10px 20px;
-  }
-
-  #about p {
-    max-width: 90%;
-    margin-right: 10px;
-    /* Adjust margin for smaller screens */
   }
 }
