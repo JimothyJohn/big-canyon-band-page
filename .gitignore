@@ -1,3 +1,4 @@
 *.code-workspace
 *.mp4
 .DS_Store
+.env*

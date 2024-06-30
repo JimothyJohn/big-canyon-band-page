@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll("nav a");
   const sections = document.querySelectorAll("section");
 
-  // Custom smooth scrolling function
   function smoothScroll(target, duration) {
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
@@ -26,33 +25,28 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(animation);
   }
 
-  // Smooth scrolling
   navLinks.forEach(link => {
-    link.addEventListener("click", function (event) {
+    link.addEventListener("click", (event) => {
       event.preventDefault();
-      const targetSection = document.querySelector(this.getAttribute("href"));
-      smoothScroll(targetSection, 1000); // Set duration to 1000ms (1 second)
+      const targetSection = document.querySelector(link.getAttribute("href"));
+      smoothScroll(targetSection, 1000);
     });
   });
 
-  // Highlighting the current section
-  window.addEventListener("scroll", function () {
-    let currentSection = "";
+  function highlightCurrentSection() {
+    const scrollPosition = window.pageYOffset;
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 50; // Adjusted offset to better match the actual top of the section
-      const sectionHeight = section.clientHeight;
+      const sectionTop = section.offsetTop - 50;
+      const sectionBottom = sectionTop + section.offsetHeight;
 
-      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute("id");
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        const currentLink = document.querySelector(`nav a[href="#${section.id}"]`);
+        navLinks.forEach(link => link.classList.remove("active"));
+        currentLink.classList.add("active");
       }
     });
+  }
 
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentSection}`) {
-        link.classList.add("active");
-      }
-    });
-  });
+  window.addEventListener("scroll", highlightCurrentSection);
 });

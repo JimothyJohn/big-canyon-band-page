@@ -1,31 +1,13 @@
-@font-face {
-  font-family: 'Mont';
-  src: url('fonts/mont-heavy.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garet';
-  src: url('fonts/Garet-Book.woff2') format('woff2'),
-    url('fonts/Garet-Book.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&family=Montserrat:wght@400;700&display=swap');
 
 body {
-  font-family: 'Garet', sans-serif;
-  background-color: #111;
-  /* background-color: #f7f1e3; */
-  color: #ccc;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F4E9D8;
+  color: #3E2723;
   margin: 0;
-  padding: 0 0 0 30;
-  justify-content: flex-end;
-  /* Align the container to the right */
+  padding: 0;
   text-align: right;
-  /* Align all text to the right */
-  justify-content: flex-end;
-  /* Align the container to the right */
 }
 
 .social-tags {
@@ -38,81 +20,85 @@ body {
   width: 30px;
   height: 30px;
   margin: 0 5px;
+  filter: sepia(1) hue-rotate(140deg) saturate(60%);
 }
 
 header {
   position: relative;
-  background-image: url('media/hero.png');
+  background-image: url('media/band.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
-  /* Make header full width */
-  height: 300px;
-  color: #ddd;
+  height: 50vh;
+  min-height: 300px;
+  color: #F4E9D8;
   display: flex;
   justify-content: flex-end;
-  align-items: start;
-  /* Keep header content centered */
-  flex-direction: column;
+  align-items: flex-end;
   box-sizing: border-box;
-  /* Ensure padding is included in the width */
 }
 
 header::after {
   content: '';
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 30%;
-  background: linear-gradient(to top, rgba(16, 16, 16, 1.0), rgba(16, 16, 16, 0));
+  background: linear-gradient(to top, rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0));
   pointer-events: none;
-  /* Allow interactions with the content */
-  z-index: 1;
-  /* Ensure gradient is on top of the background but below the content */
 }
 
-header>* {
+.header-content {
   position: relative;
   z-index: 2;
-  /* Ensure content is above the gradient */
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-content h1 {
-  position: absolute;
-  padding-left: 20px;
-  width: 340px;
-  font-family: 'Mont', serif;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  font-size: 2em;
+  font-family: 'Manrope', sans-serif;
+  text-shadow: 0 0 20px rgba(62, 39, 35, 0.6);
+  font-size: 2.5vw;
+  color: #F4E9D8;
+  margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 section {
-  padding: 20px 30px;
-  text-align: right;
-  /* Align section content to the right */
-  /* Add padding to keep content away from the edge */
+  margin-bottom: 40px;
 }
 
 p {
-  max-width: 400px;
-  margin: 0 0 0 auto;
-  /* Align about section content to the right */
+  max-width: 600px;
+  margin: 0 0 20px auto;
 }
 
-.sepia-tone {
-  filter: sepia(1);
+p a {
+  color: #8D6E63;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #6D4C41;
 }
 
 h2 {
-  font-family: 'Mont', serif;
-  color: #eee;
-  margin: 10px 0;
+  font-family: 'Manrope', sans-serif;
+  color: #5D4037;
+  margin: 0 0 20px 0;
 }
 
 nav {
-  background-color: rgba(187, 187, 187, 0.7);
-  ;
+  background-color: rgba(93, 64, 55, 0.7);
   padding: 10px;
   position: fixed;
   top: 50%;
@@ -120,52 +106,51 @@ nav {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  z-index: 1000;
 }
 
-a {
-  color: #fff;
+nav a {
+  font-family: 'Manrope', sans-serif;
+  color: #F4E9D8;
   text-decoration: none;
   display: block;
-  /* Smooth transition */
+  padding: 10px;
+  transition: all 0.3s ease;
 }
 
-a:hover {
-  color: #444;
-  /* Highlight color on hover */
+nav a:hover {
+  color: #D7CCC8;
   transform: scale(1.05);
-  /* Slightly scale up the link */
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  /* Add shadow effect */
-  transition: transform 0.5s ease, shadow 0.5s ease;
-  /* Smooth transition */
+  text-shadow: 0 4px 8px rgba(62, 39, 35, 0.3);
 }
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .contact-button {
+  font-family: 'Manrope', sans-serif;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #aaa;
+  background-color: #8D6E63;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  color: #eee;
+  color: #F4E9D8;
   margin: 5px 0;
-  /* Smooth transition */
+}
+
+.contact-button:hover {
+  background-color: #6D4C41;
 }
 
 .show-section {
-  max-width: 500px;
-  background-color: #444;
+  max-width: 600px;
+  background-color: #D7CCC8;
   margin-left: auto;
-  /* Push the container to the right */
-  /* Optional: Add a background color for better visibility */
-  padding: 10px;
-  /* Optional: Add a shadow for better visibility */
-  /* Align text inside the container to the left */
-  /* Ensure the container has some padding from the edge */
+  padding: 20px;
+  color: #3E2723;
 }
 
 .show-section h2 {
@@ -175,34 +160,85 @@ ul {
 li {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
 .show-details {
   flex-grow: 1;
+  margin-left: 10px;
 }
 
 .show-details a {
   text-decoration: none;
-  color: #aaa;
+  color: #5D4037;
 }
 
 footer {
-  background-color: #444;
+  background-color: #8D6E63;
   text-align: center;
-  color: #eee;
+  color: #F4E9D8;
   padding: 10px;
-  /* Add padding to keep footer content away from the edge */
+  /* Reduced from 20px to about a third */
+  font-size: 0.8em;
+  /* Slightly smaller font size */
 }
 
-/* Media queries for responsive design */
+footer p {
+  margin: 0;
+  /* Remove default paragraph margin */
+}
+
 @media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
   header {
-    height: 300px;
-    /* Adjust height for smaller screens */
+    height: 30vh;
+    min-height: 200px;
   }
 
   .header-content h1 {
-    font-size: 1.2em;
-    /* Adjust font size for smaller screens */
+    font-size: 6vw;
+  }
+
+  nav {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  nav a {
+    padding: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  p,
+  .show-section {
+    max-width: 100%;
+  }
+
+  .show-section {
+    padding: 15px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .show-details {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-content h1 {
+    font-size: 30px;
   }
 }
