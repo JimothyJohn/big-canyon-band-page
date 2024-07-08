@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll("nav a");
+  const navLinks = document.querySelectorAll("nav a:not(#social)");
   const sections = document.querySelectorAll("section");
 
   function smoothScroll(target, duration) {
