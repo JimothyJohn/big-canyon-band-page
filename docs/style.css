@@ -178,6 +178,24 @@ li {
   color: #5D4037;
 }
 
+.social-links {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  filter: sepia(1) hue-rotate(140deg) saturate(60%);
+}
+
+.social-icon:hover {
+  opacity: 1;
+}
+
 .split-section {
   display: flex;
   justify-content: space-between;

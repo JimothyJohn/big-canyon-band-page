@@ -8,8 +8,6 @@ Authored by ChatGPT and edited by Nick. Supervised by Mike.
 
 [ ] Add more media
 
-[ ] Fix padding
-
 [ ] Clean up style.css
 
 [ ] Add IG account
