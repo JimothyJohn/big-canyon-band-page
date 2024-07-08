@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: right;
+  position: relative;
 }
 
 .social-tags {
@@ -70,6 +71,8 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 section {
@@ -166,6 +169,8 @@ li {
 .show-details {
   flex-grow: 1;
   margin-left: 10px;
+  padding: 0 40px;
+  text-align: right;
 }
 
 .show-details a {
@@ -173,9 +178,52 @@ li {
   color: #5D4037;
 }
 
+.split-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+#about,
+#contact {
+  flex: 1;
+  max-width: 50%;
+  margin-left: auto;
+  padding-left: 20px;
+}
+
+.sticker-image {
+  flex: 1;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+  display: block;
+}
+
+#cliffside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 150vh;
+  /* Make it taller than the viewport */
+  z-index: -1;
+}
+
+body {
+  position: relative;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
 footer {
   background-color: #8D6E63;
-  text-align: center;
+  text-align: right;
   color: #F4E9D8;
   padding: 10px;
   /* Reduced from 20px to about a third */
@@ -189,6 +237,13 @@ footer p {
 }
 
 @media (max-width: 768px) {
+
+  #about,
+  #contact {
+    max-width: 50%;
+    padding-left: 0;
+  }
+
   body {
     padding: 0;
   }
@@ -224,6 +279,7 @@ footer p {
   }
 
   .show-section {
+    max-width: 100%;
     padding: 15px;
   }
 
@@ -234,6 +290,19 @@ footer p {
 
   .show-details {
     margin-left: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .show-date {
+    width: 100%;
+    text-align: right;
+  }
+
+  #sticker {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }
 

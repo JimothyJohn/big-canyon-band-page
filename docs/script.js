@@ -49,4 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", highlightCurrentSection);
+
+  const mountain2 = document.getElementById('mountain2');
+  const mountain3 = document.getElementById('mountain3');
+  const mountain4 = document.getElementById('mountain4');
+
+  function parallax() {
+    const scrollPosition = window.pageYOffset;
+
+    // Adjust these values to change the parallax effect
+    mountain2.style.transform = `translateY(${scrollPosition * -0.02}px)`;
+    mountain3.style.transform = `translateY(${scrollPosition * -0.03}px)`;
+    mountain4.style.transform = `translateY(${scrollPosition * -0.04}px)`;
+  }
+
+  window.addEventListener('scroll', parallax);
 });
