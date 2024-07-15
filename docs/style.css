@@ -222,11 +222,11 @@ li {
 
 #cliffside {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 50%;
-  height: 150vh;
-  /* Make it taller than the viewport */
+  width: 150%;
+  height: 20vh;
+  /* Adjust the height as needed */
   z-index: -1;
 }
 

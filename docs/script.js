@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll("nav a:not(#social)");
+  const navLinks = document.querySelectorAll("nav a:not(#instagram):not(#soundcloud)");
   const sections = document.querySelectorAll("section");
 
   function smoothScroll(target, duration) {
@@ -54,13 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const mountain3 = document.getElementById('mountain3');
   const mountain4 = document.getElementById('mountain4');
 
+  // Line 55: Update the parallax function
+  // Line 55: Update the parallax function
   function parallax() {
     const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const maxScroll = documentHeight - windowHeight;
 
     // Adjust these values to change the parallax effect
-    mountain2.style.transform = `translateY(${scrollPosition * -0.02}px)`;
-    mountain3.style.transform = `translateY(${scrollPosition * -0.03}px)`;
-    mountain4.style.transform = `translateY(${scrollPosition * -0.04}px)`;
+    mountain2.style.transform = `translateX(${(scrollPosition / maxScroll) * -20}px)`;
+    mountain3.style.transform = `translateX(${(scrollPosition / maxScroll) * -30}px)`;
+    mountain4.style.transform = `translateX(${(scrollPosition / maxScroll) * -40}px)`;
   }
 
   window.addEventListener('scroll', parallax);
