@@ -1,31 +1,14 @@
-@font-face {
-  font-family: 'Mont';
-  src: url('fonts/mont-heavy.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garet';
-  src: url('fonts/Garet-Book.woff2') format('woff2'),
-    url('fonts/Garet-Book.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+/* Import Google Fonts */
+@import url('https: //fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet');
 
 body {
-  font-family: 'Garet', sans-serif;
-  background-color: #111111;
-  /* background-color: #f7f1e3; */
-  color: #dddddd;
+  font-family: 'Oswald', sans-serif;
+  background-color: #F4E9D8;
+  color: #3E2723;
   margin: 0;
-  padding: 0 0 0 30;
-  justify-content: flex-end;
-  /* Align the container to the right */
+  padding: 0;
   text-align: right;
-  /* Align all text to the right */
-  justify-content: flex-end;
-  /* Align the container to the right */
+  position: relative;
 }
 
 .social-tags {
@@ -38,6 +21,7 @@ body {
   width: 30px;
   height: 30px;
   margin: 0 5px;
+  filter: sepia(1) hue-rotate(140deg) saturate(60%);
 }
 
 header {
@@ -46,195 +30,295 @@ header {
   background-size: cover;
   background-position: center;
   width: 100%;
-  /* Make header full width */
-  height: 300px;
-  color: #ddd;
+  height: 20vh;
+  min-height: 200px;
+  color: #F4E9D8;
   display: flex;
   justify-content: flex-end;
-  align-items: start;
-  /* Keep header content centered */
-  flex-direction: column;
+  align-items: flex-end;
   box-sizing: border-box;
-  /* Ensure padding is included in the width */
 }
 
 header::after {
   content: '';
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 30%;
-  background: linear-gradient(to top, rgba(16, 16, 16, 1.0), rgba(16, 16, 16, 0));
+  background: linear-gradient(to top, rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0));
   pointer-events: none;
-  /* Allow interactions with the content */
-  z-index: 1;
-  /* Ensure gradient is on top of the background but below the content */
 }
 
-header>* {
+.header-content {
   position: relative;
   z-index: 2;
-  /* Ensure content is above the gradient */
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-content h1 {
-  position: absolute;
-  width: 400px;
-  font-family: 'Mont', serif;
-  padding-left: 20px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  font-size: 2em;
+  font-family: 'Manrope', sans-serif;
+  text-shadow: 0 0 20px rgba(62, 39, 35, 0.6);
+  font-size: 4.5vw;
+  color: #F4E9D8;
+  margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 section {
-  padding: 20px 20px;
-  text-align: right;
-  /* Align section content to the right */
-  padding-right: 30px;
-  /* Add padding to keep content away from the edge */
+  margin-bottom: 40px;
 }
 
 p {
-  max-width: 400px;
-  margin: 0 0 0 auto;
-  padding: 15px;
-  /* Align about section content to the right */
+  max-width: 600px;
+  margin: 0 0 20px auto;
 }
 
-.sepia-tone {
-  filter: sepia(1);
+p a {
+  color: #8D6E63;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #6D4C41;
 }
 
 h2 {
-  font-family: 'Mont', serif;
-  color: #eee;
-  margin: 10px 0;
+  font-family: 'Manrope', sans-serif;
+  color: #5D4037;
+  margin: 0 0 20px 0;
 }
 
 nav {
-  background-color: #bbb;
-  padding: 5px;
+  background-color: rgba(93, 64, 55, 0.7);
+  padding: 10px;
   position: fixed;
-  top: 33.3%;
+  top: 50%;
   left: 0;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  z-index: 1000;
 }
 
-a {
-  color: #fff;
-  margin: 5px 0;
+nav a {
+  font-family: 'Manrope', sans-serif;
+  color: #F4E9D8;
   text-decoration: none;
-  padding: 5px;
   display: block;
-  transition: background-color 0.3s ease;
-  /* Smooth transition */
+  padding: 10px;
+  transition: all 0.3s ease;
 }
 
-a:hover {
-  color: #666;
-  /* Highlight color on hover */
-  transform: scale(1.1);
-  /* Slightly scale up the link */
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  /* Add shadow effect */
-  transition: transform 0.5s ease, shadow 0.5s ease;
-  /* Smooth transition */
-}
-
-nav a.active {
-  text-decoration: underline;
+nav a:hover {
+  color: #D7CCC8;
+  transform: scale(1.05);
+  text-shadow: 0 4px 8px rgba(62, 39, 35, 0.3);
 }
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .contact-button {
+  font-family: 'Manrope', sans-serif;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #bbb;
+  background-color: #8D6E63;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  color: #fff;
+  color: #F4E9D8;
   margin: 5px 0;
-  /* Smooth transition */
 }
 
-#shows {
-  width: 600px;
-  background-color: #444;
-  /* Optional: Add a background color for better visibility */
+.contact-button:hover {
+  background-color: #6D4C41;
+}
+
+.show-section {
+  max-width: 600px;
+  background-color: #D7CCC8;
+  margin-left: auto;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Optional: Add a shadow for better visibility */
-  text-align: right;
-  /* Align text inside the container to the left */
-  margin-right: 30px;
-  /* Ensure the container has some padding from the edge */
+  color: #3E2723;
 }
 
-#shows h2 {
+.show-section h2 {
   text-align: right;
-}
-
-#shows ul {
-  padding: 0;
 }
 
 li {
   display: flex;
   justify-content: flex-end;
-}
-
-.show-date {
-  width: 100px;
-  /* Adjust the width as needed */
+  margin-bottom: 10px;
 }
 
 .show-details {
   flex-grow: 1;
+  margin-left: 10px;
+  padding: 0 40px;
+  text-align: right;
 }
 
 .show-details a {
   text-decoration: none;
-  color: #aaa;
+  color: #5D4037;
 }
 
-.show-details a:hover {
-  text-decoration: underline;
+.social-links {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  filter: sepia(1) hue-rotate(140deg) saturate(60%);
+}
+
+.social-icon:hover {
+  opacity: 1;
+}
+
+.split-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+#about,
+#contact {
+  flex: 1;
+  max-width: 50%;
+  margin-left: auto;
+  padding-left: 20px;
+}
+
+.sticker-image {
+  flex: 1;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+  display: block;
+}
+
+#cliffside {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 150%;
+  height: 20vh;
+  /* Adjust the height as needed */
+  z-index: -1;
+}
+
+body {
+  position: relative;
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 footer {
-  background-color: #444;
-  color: #eee;
+  background-color: #8D6E63;
+  text-align: right;
+  color: #F4E9D8;
   padding: 10px;
-  padding-right: 20px;
-  /* Add padding to keep footer content away from the edge */
+  /* Reduced from 20px to about a third */
+  font-size: 0.8em;
+  /* Slightly smaller font size */
 }
 
-/* Media queries for responsive design */
+footer p {
+  margin: 0;
+  /* Remove default paragraph margin */
+}
+
 @media (max-width: 768px) {
+
+  #about,
+  #contact {
+    max-width: 50%;
+    padding-left: 0;
+  }
+
+  body {
+    padding: 0;
+  }
+
   header {
-    height: 300px;
-    /* Adjust height for smaller screens */
+    height: 20vh;
+    min-height: 100px;
   }
 
   .header-content h1 {
-    font-size: 1.5em;
-    /* Adjust font size for smaller screens */
+    font-size: 6vw;
   }
 
-  section {
-    padding: 10px 20px;
+  nav {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
   }
 
-  #about p {
-    max-width: 90%;
-    margin-right: 10px;
-    /* Adjust margin for smaller screens */
+  nav a {
+    padding: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  p {
+    max-width: 100%;
+  }
+
+  .show-section {
+    max-width: 50%;
+    padding: 15px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .show-details {
+    margin-left: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .show-date {
+    width: 100%;
+    text-align: right;
+  }
+
+  #sticker {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }

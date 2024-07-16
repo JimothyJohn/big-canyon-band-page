@@ -9,7 +9,8 @@ fi
 
 
 main() {
-    aws s3 sync docs/ s3://big-canyon 
+    source .env
+    aws s3 sync docs/ s3://${S3_BUCKET}
 }
 
 main "$@"
