@@ -247,8 +247,7 @@
       text-align: center;
       background-color: rgba(34,34,34, 0.7); /* Slightly more transparent section */
       border-radius: 6px;
-      border: 1px solid #333333; 
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); /* AI-generated: Using existing shadow for outline effect */
     }
     section:last-of-type {
         margin-bottom: 0;
@@ -281,8 +280,7 @@
       display: block;
       margin: 10px auto;
       border-radius: 4px;
-      border: 1px solid #404040; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* AI-generated: Using existing shadow for outline effect */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .sticker-image:hover {
@@ -302,8 +300,7 @@
       letter-spacing: 0.5px;
       text-transform: uppercase; /* Stronger CTA */
       transition: all 0.3s ease;
-      border: 1px solid #C6A46B;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* AI-generated: Using existing shadow for outline effect */
       margin-top: 20px; /* More space above button */
     }
 
@@ -320,8 +317,8 @@
         margin-bottom: 25px;
         font-size: clamp(1.1rem, 2.5vw, 1.35rem); /* More prominent link */
         padding: 8px 15px;
-        border: 1px solid #C6A46B;
         border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(198, 164, 107, 0.35); /* AI-generated: Added shadow */
         transition: background-color 0.3s ease, color 0.3s ease;
     }
      #music .video-link:hover {
@@ -332,7 +329,6 @@
     #music iframe {
       border-radius: 4px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25); 
-      border: 1px solid #333333;
       max-width: 100%; 
     }
     .soundcloud-attribution {
@@ -354,16 +350,14 @@
 
     .show-list li {
       background-color: #282828; 
-      border: 1px solid #3A3A3A; 
       border-radius: 4px;
-      padding: 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 18px; /* Default desktop padding */
+      margin-bottom: 18px; /* Default desktop margin */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* AI-generated: Using existing shadow for main outline */
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
+      flex-direction: row; /* AI-generated: Change to row layout for left-right columns */
+      align-items: stretch;   /* Make children take full height */
+      gap: 20px; /* Horizontal gap between left and right columns */
       transition: background-color 0.3s ease, border-left-color 0.3s ease;
       border-left: 3px solid transparent; 
     }
@@ -372,28 +366,88 @@
         border-left-color: #C6A46B; 
     }
 
+    /* AI-generated: Container for left column with event details */
+    .show-details-container {
+      flex: 1; /* Take remaining space */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      min-width: 0; /* Allow flex shrinking */
+    }
+
+    /* AI-generated: Styles for show videos and images container (right column) */
+    .show-video-container {
+      flex: 0 0 auto; /* Don't grow or shrink, auto width */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .show-video {
+      /* width: 100%; */ /* AI-generated: Removed to allow aspect-ratio to correctly determine width when max-height is constraining. */
+      max-height: 220px; /* AI-generated: Retained. The video's height will not exceed this. */
+      aspect-ratio: 9 / 16; /* AI-generated: Set to match 1080x1920. Width will be derived from height if max-height is active. */
+      object-fit: cover;   /* AI-generated: Video content will cover the element. Since the element now has the correct aspect ratio, the video content itself won't be improperly cropped. */
+      border-radius: 4px;  /* Retained */
+      display: block;      /* Retained */
+      margin: 0 auto;      /* AI-generated: Centers the video element horizontally within its container if its actual width is less than 100%. */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Retained */
+    }
+    /* End AI-generated */
+
+    /* AI-generated: Styles for show images with a specific aspect ratio (e.g., 1856x2304 -> 29/36) */
+    .show-image-display {
+      max-height: 220px; 
+      aspect-ratio: 29 / 36; /* Aspect ratio for 1856x2304 images */
+      object-fit: cover;   
+      border-radius: 4px;  
+      display: block;      
+      margin: 0 auto;      
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+    }
+    /* End AI-generated */
+
     .show-date {
       font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       color: #E0E0E0; 
       font-size: clamp(1rem, 2.2vw, 1.2rem);
-      flex-basis: 170px; 
+      order: 0; /* Part of flex ordering */
+      width: 100%; /* Ensure full width within the column flex item */
+      text-align: center; /* AI-generated: Center date text */
     }
 
-    .show-venue a {
+    /* AI-generated: Styles for event name */
+    .show-event-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #C6A46B; /* Match site accent color */
+      font-size: clamp(1.1rem, 2.4vw, 1.3rem);
+      order: 2; /* Between video and venue */
+      width: 100%;
+      text-align: center;
+      margin: 8px 0;
+    }
+
+    .show-venue { /* Styles for the venue name container */
+      text-align: center; /* AI-generated: Center venue text */
+      order: 3; /* Updated ordering for new event name */
+      width: 100%; /* Ensure full width */
+    }
+    .show-venue a { /* Styles for the link within venue */
       font-weight: 600; 
       font-size: clamp(1rem, 2vw, 1.15rem);
     }
-    .show-venue, .show-location {
-      flex-grow: 1;
-      text-align: left;
-    }
-     .show-location {
+
+    .show-location {
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(0.9rem, 1.8vw, 1rem);
       color: #9E9E9E; 
-      text-align: right;
+      text-align: center; /* AI-generated: Center location text */
       font-weight: 400;
+      order: 4; /* Updated ordering for new event name */
+      width: 100%; /* Ensure full width */
     }
     
     /* Footer */
@@ -403,7 +457,7 @@
       text-align: center;
       padding: 20px;
       font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-      border-top: 1px solid #2A2A2A;
+      box-shadow: 0 -1px 4px rgba(0,0,0,0.1); /* AI-generated: Added top shadow */
     }
     footer p { margin: 0; font-weight: 300; }
 
@@ -418,8 +472,7 @@
         left: 0;
         background-color: rgba(20, 20, 20, 0.98); 
         padding: 8px 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        border-top: 1px solid #2A2A2A;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* AI-generated: Kept existing shadow, will define top edge */
       }
 
       .nav-links.active {
@@ -490,7 +543,7 @@
           gap: 8px;      /* Reduced gap */
           margin-bottom: 12px; /* Reduced margin */
       }
-      .show-venue, .show-location {
+      .show-venue, .show-location, .show-event-name {
           text-align: center;
       }
       /* End AI-generated change for show sections */
@@ -542,54 +595,68 @@
   <main class="container">
     <section id="about">
       <h2>ABOUT THE BOYS</h2>
-      <p>Big Canyon Boys only play one-of-a-kind gigs: your favorite music in a way that's never the same twice. They blend classic rock influences with a fresh, modern energy. These aren't concerts, they're experiences.</p>
+      <p>Big Canyon Boys only play one-of-a-kind shows: your favorite music in a way that's never the same twice. It's not a concert, it's an experience.</p>
     </section>
 
     <section id="shows">
+      <p style="margin-top: 2em;"><a href="#contact" class="contact-button" style="margin-top:0;">Book Us For Your Event</a></p>
       <h2>UPCOMING SHOWS</h2>
       <ul class="show-list">
         <li>
-          <span class="show-date">June 22, 2025</span>
+          <span class="show-date">August 16, 2025 @ 5 PM</span>
+          <div class="show-video-container">
+            <video class="show-video" src="media/250816v0_1.mp4" autoplay loop muted playsinline controls></video>
+          </div>
+          <span class="show-event-name">Tiki Party</span>
           <span class="show-venue">
-            <a href="https://oddmusebrewing.com/" target="_blank" rel="noopener noreferrer">Odd Muse Brewing</a>
+            <a href="https://oddmusebrewing.com/" target="_blank" rel="noopener noreferrer">Odd Muse Brewing, Addison, TX</a>
           </span>
-          <span class="show-location">Addison, TX</span>
         </li>
-
+        <li>
+          <span class="show-date">September 27, 2025 @ 7 PM</span>
+          <div class="show-video-container">
+            <img src="media/placeholder-oddtoberfest.jpg" alt="Oddtoberfest at Odd Muse" class="show-image-display">
+          </div>
+          <span class="show-event-name">Oddtoberfest</span>
+          <span class="show-venue">
+            <a href="https://oddmusebrewing.com/" target="_blank" rel="noopener noreferrer">Odd Muse Brewing, Addison, TX</a>
+          </span>
+        </li>
       </ul>
-      <p style="margin-top: 2em;"><a href="#contact" class="contact-button" style="margin-top:0;">Book Us For Your Event</a></p>
+      
     </section>
 
     <section id="previous-shows">
       <h2>PREVIOUS SHOWS</h2>
       <ul class="show-list">
-        <!-- AI-generated placeholder: Add previous show list items here -->
-         <li>
+        <li>
+          <span class="show-date">July 3, 2025</span>
+          <div class="show-video-container"></div>
+              <img src="media/250703 Concert v1.png" alt="The Flying Saucer highlight" class="show-image-display">
+          </div>
+          <span class="show-event-name">Kaboomtown</span>
+          <span class="show-venue">
+            <a href="https://oddmusebrewing.com/" target="_blank" rel="noopener noreferrer">Odd Muse Brewing, Addison, TX</a>
+          </span>
+        </li>
+        <li>
             <span class="show-date">April 13, 2025</span>
+            <div class="show-video-container">
+              <img src="media/250413v0.jpg" alt="The Flying Saucer highlight" class="show-image-display">
+            </div>
+            <span class="show-event-name">Plate Party Spectacular</span>
             <span class="show-venue">
-              <a href="https://www.youtube.com/watch?v=TMELh76pp3c" target="_blank" rel="noopener noreferrer">The Flying Saucer</a>
+              <a href="https://www.youtube.com/watch?v=TMELh76pp3c" target="_blank" rel="noopener noreferrer">The Flying Saucer, Coppell, TX</a>
             </span>
-            <span class="show-location">Coppell, TX</span>
           </li>
       </ul>
-    </section>
-
-    <section id="music">
-        <h2>THE SOUND</h2>
-        <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1848854025&color=%23c6a46b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </section>
 
     <section id="contact">
       <h2>BOOK THE BAND</h2>
       <div class="split-section">
-        <div class="split-content">
           <p>Ready to bring the Big Canyon Boys' energy to your venue, private party, wedding, or corporate event? Let's make it happen!</p>
           <a href="mailto:nick@bigcanyonboys.com?cc=mike@bigcanyonboys.com&subject=Booking%20Big%20Canyon%20Boys%20-%20Event%20Inquiry&body=Hello%20Big%20Canyon%20Boys,%0D%0A%0D%0AI'm%20reaching%20out%20to%20book%20your%20band%20for%20an%20upcoming%20event.%0D%0AEvent%20Type:%20[e.g.,%20Venue%20Night,%20Private%20Party,%20Wedding,%20Corporate%20Event]%0D%0ADate(s)%20of%20Interest:%20%0D%0ALocation/Venue%20Name:%20%0D%0AEstimated%20Attendance:%20%0D%0ADesired%20Set%20Length/Start%20Time:%20%0D%0ABudget%20Range%20(Optional):%20%0D%0A%0D%0APlease%20provide%20your%20availability%20and%20booking%20information.%0D%0A%0D%0AThank%20you,%0D%0A[Your%20Full%20Name]%0D%0A[Your%20Phone%20Number]%0D%0A[Your%20Email%20Address]" class="contact-button">BOOK US</a>
-        </div>
-        <div class="split-image-container">
-          <img src="media/250413v0.jpg" alt="Big Canyon Boys Promotional Image" class="sticker-image">
-        </div>
       </div>
     </section>
   </main>
